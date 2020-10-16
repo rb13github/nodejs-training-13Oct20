@@ -1,0 +1,54 @@
+const express = require('express');
+const MessageRouter = require('./routers/messagerouter');
+const BooksRouter = require('./routers/booksrouer');
+//you have to use npm install body-paser --save to first install this dependencies
+//this is used to convert the json in the request body into java script object
+const bodyParser = require('body-parser');
+
+
+const { log } = console;
+const port = 3000;
+//create application object
+const app = express();
+
+//bind parsers
+app.use(bodyParser.json())
+
+//connect Routers with application object
+app.use('/api/message',MessageRouter)
+app.use('/api/books',BooksRouter);
+
+
+app.get('/', (request, response) => {
+    response.end('Home')
+});
+//start server
+app.listen(port, () => {
+    log('Express server is running @', port);
+});
+
+const { findAll } = require('../services/BookService');
+const express = require('express');
+const router = express.Router();
+
+router.get('/list', async (req, res) => {
+    try {
+        const books = await findAll();
+        res.status(200).json(books)
+    }
+    catch (err) {
+        res.status(400).json({ message: 'Books Not found' })
+    }
+});
+
+router.post('/create', async (req, res) => {
+    //as we have used body-parser which will convert json into java script object
+    const book = req.body;
+    console.log(book);
+    res.status(201).json({ message: 'Created' })
+});
+
+
+
+module.exports = router;
+

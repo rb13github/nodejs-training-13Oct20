@@ -1,7 +1,8 @@
 //use of commonjs
 
-const TODOS = require('../mock-data/TODOS')
+const TODOSLIST = require('../mock-data/TODOSLIST')
 
+const todo = require('../mock-data/TODO')
 /**
  * function require(fileName){
  *  let exports = {};
@@ -20,12 +21,39 @@ const TODOS = require('../mock-data/TODOS')
 
 
 class TODOService {
+
+       
     constructor(){
         console.log('Todo service is called!!!')
     }
     findAll(){
-        return TODOS;
+        return TODOSLIST;
     }
+    add( todoObject)
+    {
+
+
+    }
+
+    update( todoObject)
+    {
+
+
+    }
+
+    save( todoObject)
+    {
+
+
+    }
+
+    remove( todoObject)
+    {
+
+
+    }
+
+
 }
 
 module.exports = TODOService;

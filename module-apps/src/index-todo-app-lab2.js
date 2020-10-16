@@ -15,3 +15,30 @@ function findAllTodos() {
     console.log("in findAllTodos");
     console.log(service.findAll());
 }
+
+function addtodo( todo)
+{
+
+
+}
+function savetodo( todo)
+{
+
+
+}
+function updatetodo( todo)
+{
+
+
+}
+function removetodo( todo)
+{
+
+
+}
+function savetodo( todo)
+{
+
+
+}
+

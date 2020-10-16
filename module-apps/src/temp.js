@@ -22,50 +22,5 @@ const ORDERS = [
 module.exports = ORDERS;
 
 services/OrderService.js
-const ORDERS = require('../mock-data/Orders')
-
-/**
- * function require(fileName){
- *  let exports = {};
- *  let module.exports;
- * 
- *  if(module.exports){
- * 
- *    return code
- *  }
- * 
- *   return exports
- * 
- * 
- * }
- */
-
-
-class OrderService {
-    constructor(){
-        console.log('order service is called!!!')
-    }
-    findAll(){
-        return ORDERS;
-    }
-}
-
-module.exports = OrderService;
 
 index.js
-const OrderService = require('./services/OrderService');
-
-////////////////////////////////////////////////
-const service = new OrderService();
-const { findAll } = new OrderService();
-
-
-function startApp() {
-    findAllProducts();
-}
-startApp();
-
-function findAllProducts() {
-    //console.log(service.findAll())
-    console.log(findAll())
-}

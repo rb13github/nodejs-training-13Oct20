@@ -1,0 +1,6 @@
+Time : 15 mins
+3.You have to add new api inside fileservice, once written you have to write promise.
+
+•	You have pass to  user information as literal object as input to an api – api name you can decide.
+•	User information such as id,firstName,lastName,address: street,city,state, isActive
+•	You have to write user information in the form of json inside file called “user.json”
