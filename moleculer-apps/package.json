@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moleculer": "^0.14.11"
+    "ioredis": "^4.17.3",
+    "moleculer": "^0.14.11",
+    "nats": "^1.4.12"
+  },
+  "devDependencies": {
+    "moleculer-repl": "^0.6.4"
   }
 }

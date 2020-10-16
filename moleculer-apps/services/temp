@@ -1,0 +1,23 @@
+//using nats are transporter
+
+docker run -p 4444:4444 nats -p 4444
+
+npm install nats --save
+
+const broker = new ServiceBroker({
+    transporter: "nats://localhost:4444"
+});
+
+
+//usig redis as discovery
+docker run  -p 6379:6379 redis
+
+
+npm install ioredis --save
+
+const broker = new ServiceBroker({
+    transporter: "nats://localhost:4444",
+    registry: {
+        discoverer: "redis://localhost:6379"
+    }
+});
